@@ -16,18 +16,18 @@ function Footer() {
             </div>
             <p className='text-yellow-500 text-xl md:text-4xl font-bold ml-2 md:ml-3'>TechBlog</p>
         </div>
-            <div className="flex justify-between gap-2 md:gap-0 md:pr-14">
+            <div className="flex justify-between gap-4 md:gap-0 md:pr-14">
               <a href="#" className="text-blue-600 text-xl md:text-3xl p-1 rounded-lg bg-white/20 inline-block"><i className="fa-brands fa-square-facebook"></i></a>
               <a href="#" className="text-blue-600 text-xl md:text-3xl p-1 rounded-lg bg-white/20 inline-block"><i className="fa-brands fa-square-instagram"></i></a>
               <a href="#" className="text-blue-600 text-xl md:text-3xl p-1 rounded-lg bg-white/20 inline-block"><i className="fa-brands fa-twitter"></i></a>
             </div>
             </div>
-          <div className="w-1/2 flex flex-col text-center gap-5"> 
+          <div className="w-1/2 flex flex-col text-center gap-1 md:gap-5"> 
           <h2 className="text-yellow-500 md:text-xl font-semibold">Menu</h2>
           {pages?.map((navItem,index) => (
                 <NavLink key={index} to={navItem.path}>
                         <div className="w-full">
-                          <span className={`text-white md:text-lg`}>{navItem.label}</span>
+                          <span className={`text-white text-sm md:text-lg`}>{navItem.label}</span>
                         </div>
                 </NavLink>
             ))}
