@@ -41,7 +41,7 @@ function Home() {
       >
         <div className="md:max-w-[1170px] h-auto md:h-[600px] w-full flex flex-wrap items-center">
           <div className="flex flex-wrap justify-center md:justify-normal text-center md:text-start gap-6 md:gap-12 md:w-[70%]">
-            <h1 className=" text-[25px] justify-center md:justify-normal md:text-[75px] w-full font-bold text-gray-700 flex items-center gap-4">
+            <h1 className=" text-[25px] justify-center md:justify-normal md:text-[75px] w-full font-bold text-gray-700 flex items-center gap-2 md:gap-4">
             Welcome To
             <p className="font-bold text-yellow-500">TechBlog</p>
           </h1>
