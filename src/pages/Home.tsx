@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import type { DataType } from "../typescript/interface/blogInterface";
+import TreandingPosts from "../components/TreandingCards";
+
+
+
+
+
+
 
 function Home() {
   const [blogData,setBlogData] = useState<DataType[]>([]);
@@ -33,6 +40,7 @@ function Home() {
 
     return () => clearInterval(autoSlider)
   },[]);
+
   return (
     <>
       <section
@@ -58,13 +66,18 @@ function Home() {
           </div>
           <button className='text-yellow-500 border border-white bg-black px-2 py-1 md:px-8 md:py-4 text-sm md:text-[18px] rounded-lg md:rounded-2xl'>Explore More</button>
           </div>
-
-          <div className="w-[30%] flex flex-col">
-
+        </div>
+      </section>
+      <section className="py-[50px] flex justify-center">
+        <div className="w-full md:max-w-[1170px] flex flex-wrap justify-center gap-4">
+          <h2 className=" text-center items-center text-[72px] font-bold mb-5 flex">Treanding 
+            <p className="text-yellow-500">Posts</p>
+          </h2>
+          <div className="flex flex-wrap justify-between gap-y-4">
+          <TreandingPosts posts={blogData.slice(1,5)}/>
           </div>
         </div>
       </section>
-      <section className="py-[50px]"></section>
     </>
   );
 }

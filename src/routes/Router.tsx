@@ -6,11 +6,16 @@ import Home from '../pages/Home';
 import BlogPge from '../pages/BlogPge';
 import Podcasts from '../pages/Podcasts';
 import Author from '../pages/Author';
+import { Suspense } from 'react';
+import Loading from '../components/Loading';
+import Notfound from '../components/Notfound';
+import ErrorBoundery from '../components/ErrorBoundery';
 
 const Routes = createBrowserRouter([
     {
         path:"/logIn",
-        element: <LogIn/>
+        element: <LogIn/>,
+        errorElement: <ErrorBoundery/>
     },
     {
         path:"/",
@@ -18,22 +23,44 @@ const Routes = createBrowserRouter([
         children: [
             {
                 path:"/",
-                element: <Home/>
+                element: (
+                <Suspense fallback = {<Loading/>}>
+                <Home/>
+                </Suspense>
+                ),
+                errorElement: <ErrorBoundery/>
             },
             {
                 path:"/blogs",
-                element: <BlogPge/>
+                element:(
+                <Suspense fallback = {<Loading/>}>
+                <BlogPge/>
+                </Suspense>
+                ),
+                errorElement: <ErrorBoundery/>
             },
             {
                 path: "/podcasts",
-                element: <Podcasts/>
+                element: (
+                <Suspense fallback = {<Loading/>}>
+                <Podcasts/>
+                </Suspense>
+                ),
+                errorElement: <ErrorBoundery/>
             },
             {
                 path: "/author",
-                element: <Author/>
-            }
-
-        ]
+                element: (
+                <Suspense fallback = {<Loading/>}>
+                <Author/>
+                </Suspense>
+                ),
+                errorElement: <ErrorBoundery/>
+            },
+        ],
+    },{
+        path: "*",
+        element: <Notfound/>
     }
 ]);
 
