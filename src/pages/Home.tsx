@@ -56,7 +56,7 @@ function Home() {
             sint nobis consequuntur praesentium. Ratione, qui voluptates. Error?
           </p>
           </div>
-          <button className='text-yellow-500 border border-white bg-black p-2 md:px-8 md:py-4 text-sm md:text-[18px] rounded-2xl'>Explore More</button>
+          <button className='text-yellow-500 border border-white bg-black px-2 py-1 md:px-8 md:py-4 text-sm md:text-[18px] rounded-lg md:rounded-2xl'>Explore More</button>
           </div>
 
           <div className="w-[30%] flex flex-col">
