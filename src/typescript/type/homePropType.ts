@@ -1,4 +1,4 @@
-import type { Comments, DataType, Tags } from "../interface/blogInterface"
+import type { DataType } from "../interface/blogInterface"
 
 export type PropCards = {
     posts: DataType[]  ,
