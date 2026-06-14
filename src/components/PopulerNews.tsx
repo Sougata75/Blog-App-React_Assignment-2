@@ -15,7 +15,7 @@ const PopulerNews:React.FC<PropCards> = ({posts}) => {
                     </div>
             </div>
 
-            <div className="w-full px-2 md:px-0 md:w-[1170px] flex justify-between pb-16">
+            <div className="w-full px-2 md:px-0 md:w-[1170px] flex justify-between">
                 <div className="w-full flex flex-wrap gap-3 md:gap-5">
                     <h2 className="text-gray-400 text-lg md:text-2xl font-semibold">Introduction :</h2>
                     <p className="text-gray-600 text-[12px] md:text-lg">{post.summary}{post.summary}{post.summary}</p>

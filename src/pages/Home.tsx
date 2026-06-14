@@ -3,6 +3,7 @@ import axios from "axios";
 import type { DataType } from "../typescript/interface/blogInterface";
 import TreandingPosts from "../components/TreandingCards";
 import PopulerNews from "../components/PopulerNews";
+import ExploreTechnology from "../components/ExploreTechnology";
 
 
 
@@ -81,6 +82,14 @@ function Home() {
             <p className="text-yellow-500 ml-4">News</p>
           </h2>
           <PopulerNews posts={blogData.filter((item => item.tags)).slice(0,1)} />
+      </section>
+      <section className="py-[15px] md:py-[50px] flex flex-wrap flex-col items-center gap-12">
+        <h2 className="text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold mb-8 md:mb-5 flex">Explore 
+            <p className="text-yellow-500 ml-4">Technology</p>
+          </h2>
+          <div className="md:w-[1170px] flex flex-wrap justify-between">
+            <ExploreTechnology posts={blogData.filter((item) => item.category === "Technology").slice(0,6)}/>
+          </div>
       </section>
     </>
   );
