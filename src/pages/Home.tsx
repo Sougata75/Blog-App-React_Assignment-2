@@ -2,10 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import type { DataType } from "../typescript/interface/blogInterface";
 import TreandingPosts from "../components/TreandingCards";
-
-
-
-
+import PopulerNews from "../components/PopulerNews";
 
 
 
@@ -14,6 +11,7 @@ function Home() {
   const [error, setError] = useState<string>("");
   const [loading,setLoading] = useState<boolean>(false);
   const [slide,setSlide] = useState<number>(0);
+  
 
   useEffect(() => {
     const fetchBlogData = async () => {
@@ -68,15 +66,21 @@ function Home() {
           </div>
         </div>
       </section>
-      <section className="py-[50px] flex justify-center">
-        <div className="w-full md:max-w-[1170px] flex flex-wrap justify-center gap-4">
-          <h2 className=" text-center items-center text-[72px] font-bold mb-5 flex">Treanding 
-            <p className="text-yellow-500">Posts</p>
+      <section className="py-[15px] md:py-[50px] flex justify-center">
+        <div className="w-full md:max-w-[1170px] flex flex-wrap justify-center md:gap-4">
+          <h2 className=" text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold mb-5 flex">Treanding 
+            <p className="text-yellow-500 ml-4">Posts</p>
           </h2>
           <div className="flex flex-wrap justify-between gap-y-4">
-          <TreandingPosts posts={blogData.slice(1,5)}/>
+          <TreandingPosts posts={blogData.slice(1,7)}/>
           </div>
         </div>
+      </section>
+      <section className="py-[15px] md:py-[50px] flex flex-wrap justify-center">
+        <h2 className=" text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold mb-8 md:mb-5 flex">Populer 
+            <p className="text-yellow-500 ml-4">News</p>
+          </h2>
+          <PopulerNews posts={blogData.filter((item => item.tags)).slice(0,1)} />
       </section>
     </>
   );

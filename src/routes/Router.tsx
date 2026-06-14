@@ -2,14 +2,15 @@
 import { createBrowserRouter } from 'react-router-dom'
 import LogIn from '../pages/auth/LogIn';
 import Wrapper from '../layout/Wrapper';
-import Home from '../pages/Home';
 import BlogPge from '../pages/BlogPge';
 import Podcasts from '../pages/Podcasts';
 import Author from '../pages/Author';
-import { Suspense } from 'react';
-import Loading from '../components/Loading';
+import { lazy, Suspense } from 'react';
 import Notfound from '../components/Notfound';
 import ErrorBoundery from '../components/ErrorBoundery';
+import IndividualPage from '../components/IndividualPage';
+
+const Home = lazy(() => import("../pages/Home"));
 
 const Routes = createBrowserRouter([
     {
@@ -24,7 +25,7 @@ const Routes = createBrowserRouter([
             {
                 path:"/",
                 element: (
-                <Suspense fallback = {<Loading/>}>
+                <Suspense fallback = {<p>Loading ..... </p>}>
                 <Home/>
                 </Suspense>
                 ),
@@ -33,7 +34,7 @@ const Routes = createBrowserRouter([
             {
                 path:"/blogs",
                 element:(
-                <Suspense fallback = {<Loading/>}>
+                <Suspense fallback = {<p>Loading ..... </p>}>
                 <BlogPge/>
                 </Suspense>
                 ),
@@ -42,7 +43,7 @@ const Routes = createBrowserRouter([
             {
                 path: "/podcasts",
                 element: (
-                <Suspense fallback = {<Loading/>}>
+                <Suspense fallback = {<p>Loading ..... </p>}>
                 <Podcasts/>
                 </Suspense>
                 ),
@@ -51,12 +52,21 @@ const Routes = createBrowserRouter([
             {
                 path: "/author",
                 element: (
-                <Suspense fallback = {<Loading/>}>
+                <Suspense fallback = {<p>Loading ..... </p>}>
                 <Author/>
                 </Suspense>
                 ),
                 errorElement: <ErrorBoundery/>
             },
+            {
+             path: "/blogPost/:id",
+                element: (
+                <Suspense fallback = {<p>Loading ..... </p>}>
+                <IndividualPage/>
+                </Suspense>
+                ),
+                errorElement: <ErrorBoundery/>   
+            }
         ],
     },{
         path: "*",
