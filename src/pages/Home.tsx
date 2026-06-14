@@ -71,13 +71,13 @@ function Home() {
           <h2 className=" text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold mb-5 flex">Treanding 
             <p className="text-yellow-500 ml-4">Posts</p>
           </h2>
-          <div className="flex flex-wrap justify-between gap-y-4">
+          <div className="flex flex-wrap justify-between px-2 md:px-0 gap-y-4">
           <TreandingPosts posts={blogData.slice(1,7)}/>
           </div>
         </div>
       </section>
-      <section className="py-[15px] md:py-[50px] flex flex-wrap justify-center">
-        <h2 className=" text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold mb-8 md:mb-5 flex">Populer 
+      <section className="py-[15px] md:py-[50px] flex flex-wrap flex-col items-center md:gap-12 justify-center">
+        <h2 className="text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold mb-8 md:mb-5 flex">Populer 
             <p className="text-yellow-500 ml-4">News</p>
           </h2>
           <PopulerNews posts={blogData.filter((item => item.tags)).slice(0,1)} />

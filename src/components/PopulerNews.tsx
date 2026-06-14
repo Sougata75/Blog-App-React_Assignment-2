@@ -6,11 +6,11 @@ const PopulerNews:React.FC<PropCards> = ({posts}) => {
   return (
     <>
     {posts?.map((post) => (
-        <div key={post.id} className="w-[1170px] flex flex-wrap justify-center gap-5 md:gap-12">
-            <div className="w-full h-[25vh] bg-cover bg-center md:rounded-t-2xl" style={{backgroundImage: `url(${post.featured_image})`}}>
-                <div className="w-full h-full py-5 md:py-[115px] flex justify-center items-end bg-gradient-to-b from-transparent to-gray-950">
-                    <div className="w-[75%] md:w-[1170px]">
-                        <h2 className="text-white font-bold text-center text-[16px] md:text-4xl">{post.title}</h2>
+        <div key={post.id} className="md:w-[1170px] flex flex-wrap justify-center gap-5 md:gap-12">
+            <div className="w-full h-[25vh] md:h-[55vh] bg-cover bg-center md:rounded-t-2xl" style={{backgroundImage: `url(${post.featured_image})`}}>
+                <div className="w-full h-full py-5 md:py-[90px] flex justify-center items-end bg-gradient-to-b from-transparent to-gray-950">
+                    <div className="w-[75%] md:w-[950px]">
+                        <h2 className="text-white font-bold text-center text-[16px] md:text-[60px]">{post.title}</h2>
                     </div>
                     </div>
             </div>
