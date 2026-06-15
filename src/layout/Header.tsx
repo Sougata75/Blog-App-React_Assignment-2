@@ -33,7 +33,7 @@ function Header() {
             <Menu size={30} color='#ffffff'/>
         </button>
     </div>
-    <div className={`${isActive?"block":"hidden"} absolute flex flex-col items-center gap-6 justify-self-end bg-black/40 backdrop-blur-sm h-[85vh] w-[150px] rounded-xl top-[70px] right-1 pt-5`}>
+    <div className={`${isActive?"block":"hidden"} absolute flex flex-col items-center gap-6 justify-self-end bg-black/40 backdrop-blur-sm h-[75vh] w-[150px] rounded-xl top-[70px] right-1 pt-5`}>
             {pages?.map((navItem,index) => (
                 <NavLink key={index} to={navItem.path} >
                     {({isActive}) => (

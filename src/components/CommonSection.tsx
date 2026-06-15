@@ -1,5 +1,5 @@
 import { ArrowUpRight, Atom } from 'lucide-react'
-import React from 'react'
+
 
 function CommonSection() {
   return (
