@@ -8,7 +8,7 @@ function Footer() {
     <>
     <div className="w-full md:h-[400px] py-5 md:py-10 flex flex-wrap justify-center bg-black">
       <div className="max-w-full md:max-w-[1170px] w-full flex flex-wrap justify-center md:justify-between gap-5 md:gap-0">
-        <div className="w-full md:w-[49%] flex">
+        <div className="w-full md:w-[40%] flex">
           <div className="w-1/2 flex flex-col items-center md:items-start gap-4">
             <div className='flex items-center '>
             <div className=''>
@@ -22,7 +22,7 @@ function Footer() {
               <a href="#" className="text-blue-600 text-xl md:text-3xl p-1 rounded-lg bg-white/20 inline-block"><i className="fa-brands fa-twitter"></i></a>
             </div>
             </div>
-          <div className="w-1/2 flex flex-col text-center gap-1 md:gap-5"> 
+          <div className="w-[40%] flex flex-col text-center gap-1 md:gap-5"> 
           <h2 className="text-yellow-500 md:text-xl font-semibold">Menu</h2>
           {pages?.map((navItem,index) => (
                 <NavLink key={index} to={navItem.path}>
@@ -33,8 +33,8 @@ function Footer() {
             ))}
             </div>
         </div>
-        <div className="w-full md:flex justify-between md:w-[51%]">
-          <div className="mb-5 md:mb-0 md:w-[49%] flex flex-col text-center items-center gap-5">
+        <div className="w-full md:flex justify-between md:w-[60%]">
+          <div className="mb-5 md:mb-0 md:w-[49%] flex flex-col items-center text-center md:text-start md:items-start gap-5">
           <h2 className="text-yellow-500 md:text-xl font-semibold">About US</h2>
           <p className="text-white text-[12px] md:text-[18px] w-[90%]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia necessitatibus iusto rerum harum consequatur? Eum cum illo quaerat voluptatem. Laborum nihil ut eveniet vel consequatur dolorum dolorem sit voluptatibus iste?</p>
           </div>

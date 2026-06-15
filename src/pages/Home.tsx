@@ -8,6 +8,7 @@ import Technology from "../components/treandingCategory/Technology";
 import Entertainment from "../components/treandingCategory/Entertainment";
 import Politics from "../components/treandingCategory/Politics";
 import FashionAndBeuty from "../components/treandingCategory/FashionAndBeuty";
+import CommonSection from "../components/CommonSection";
 
 
 
@@ -48,10 +49,10 @@ function Home() {
 
   return (
     <>
-      <section
-        className=" mb-[20px] md:mb-[50px] pb-[10px] md:pb-[50px] flex  justify-center bg-cover bg-center"
-        style={{ background: `url(${blogData[slide]?.featured_image})` }}
-      >
+      <section className="mb-[20px] md:mb-[50px] pb-[10px] md:pb-[50px]">
+        <div className="flex  justify-center bg-cover bg-center md:h-[80vh]"
+        style={{ background: `url(${blogData[slide]?.featured_image})` }}>
+        <div className="w-full h-full py-8 md:py-[100px] flex justify-center items-end bg-gradient-to-b from-transparent to-gray-950">
         <div className="md:max-w-[1170px] h-auto md:h-[600px] w-full flex flex-wrap items-center">
           <div className="flex flex-wrap justify-center md:justify-normal text-center md:text-start gap-6 md:gap-12 md:w-[70%]">
             <h1 className=" text-[25px] justify-center md:justify-normal md:text-[75px] w-full font-bold text-gray-700 flex items-center gap-2 md:gap-4">
@@ -71,6 +72,8 @@ function Home() {
           </div>
           <button className='text-yellow-500 border border-white bg-black px-2 py-1 md:px-8 md:py-4 text-sm md:text-[18px] rounded-lg md:rounded-2xl'>Explore More</button>
           </div>
+        </div>
+        </div>
         </div>
       </section>
       <section className="py-[15px] md:py-[50px] flex justify-center">
@@ -122,6 +125,9 @@ function Home() {
                 <FashionAndBeuty posts={blogData.filter((items) => items.category === "Fashion & Beauty").slice(0,7)}/>
               </div>
             </div>
+      </section>
+      <section  className="py-[15px] md:py-[50px] bg-gray-900 flex justify-center px-2 md:px-0">
+        <CommonSection/>
       </section>
     </>
   );
