@@ -32,31 +32,31 @@ const post = location.state as DataType;
 
   return (
     <>
-        <div className="flex flex-wrap justify-center gap-12">
-            <div className="w-full h-[65vh] bg-cover bg-center" style={{backgroundImage: `url(${post.featured_image})`}}>
-                <div className="w-full h-full py-[115px] flex justify-center items-end bg-gradient-to-b from-transparent to-gray-950">
-                    <div className="w-[1170px]">
-                        <p className="text-white font-bold text-[54px]">{post.title}</p>
+        <div className="flex flex-wrap justify-center gap-6 md:gap-12">
+            <div className="w-full h-[30vh] md:h-[65vh] bg-cover bg-center" style={{backgroundImage: `url(${post.featured_image})`}}>
+                <div className="w-full h-full py-8 md:py-[100px] flex justify-center items-end bg-gradient-to-b from-transparent to-gray-950">
+                    <div className="w-full md:w-[1170px]">
+                        <p className="text-white font-bold px-5 md:px-0 text-center text-lg md:text-[54px] md:leading-normal">{post.title}</p>
                     </div>
                     </div>
             </div>
 
-            <div className="w-[1170px] flex justify-between pb-16">
-                <div className="w-[65%] flex flex-wrap gap-5">
-                    <h2 className="text-gray-400 text-2xl font-semibold">Introduction :</h2>
-                    <p className="text-gray-600 text-lg">{post.summary}{post.summary}{post.summary}</p>
-                    <div className="w-full h-[1px] bg-gray-600 my-10"></div>
-                    <h2 className="text-gray-400 text-2xl font-semibold">Main Content :</h2>
-                    <p className="text-gray-600 text-lg">{post.summary}{post.summary}{post.summary}{post.summary}</p>
-                    <p className="text-gray-600 text-lg">{post.summary}{post.summary}{post.summary}</p>
-                    <p className="text-gray-600 text-lg">{post.summary}{post.summary}{post.summary}{post.summary}</p>
-                    <div className="w-full h-[1px] bg-gray-600 my-10"></div>
-                    <h2 className="text-gray-400 text-2xl font-semibold">Conclusion :</h2>
-                    <p className="text-gray-600 text-lg">{post.summary}{post.summary}{post.summary}</p>
+            <div className="w-full md:w-[1170px] flex flex-wrap justify-between pb-16">
+                <div className="w-full px-2 md:w-[65%] flex flex-wrap gap-3 md:gap-5">
+                    <h2 className="text-gray-400 text-lg md:text-2xl font-semibold">Introduction :</h2>
+                    <p className="text-gray-600 text-sm md:text-lg">{post.summary}{post.summary}{post.summary}</p>
+                    <div className="w-full h-[1px] bg-gray-600 my-5 md:my-10"></div>
+                    <h2 className="text-gray-400 text-lg md:text-2xl font-semibold">Main Content :</h2>
+                    <p className="text-gray-600 text-sm md:text-lg">{post.summary}{post.summary}{post.summary}{post.summary}</p>
+                    <p className="text-gray-600 text-sm md:text-lg">{post.summary}{post.summary}{post.summary}</p>
+                    <p className="text-gray-600 text-sm md:text-lg">{post.summary}{post.summary}{post.summary}{post.summary}</p>
+                    <div className="w-full h-[1px] bg-gray-600 my-5 md:my-10"></div>
+                    <h2 className="text-gray-400 text-lg md:text-2xl font-semibold">Conclusion :</h2>
+                    <p className="text-gray-600 text-sm md:text-lg">{post.summary}{post.summary}{post.summary}</p>
                 </div>
-                <div className="w-[1px] bg-gray-600"></div>
-                <div className="w-[32%] h-[500px] flex flex-wrap">
-                    <div className="w-full flex flex-wrap pl-8 h-[300px]">
+                <div className="w-[1px] hidden md:block bg-gray-600"></div>
+                <div className="w-full md:w-[32%] h-[500px] flex flex-wrap">
+                    <div className="w-full flex flex-wrap justify-center md:justify-normal pt-8 md:pt-0 md:pl-8 h-[300px]">
                         <div className="w-[90%] h-[200px] bg-cover bg-center rounded-xl" style={{backgroundImage: `url(${post.user.profile_pic})`}}></div>
                         <h3 className="text-gray-500 text-lg font-semibold">Author : {post.user.first_name} {post.user.middle_name} {post.user.last_name}</h3>
                     </div>

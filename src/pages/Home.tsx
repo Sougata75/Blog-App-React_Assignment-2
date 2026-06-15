@@ -4,6 +4,10 @@ import type { DataType } from "../typescript/interface/blogInterface";
 import TreandingPosts from "../components/TreandingCards";
 import PopulerNews from "../components/PopulerNews";
 import ExploreTechnology from "../components/ExploreTechnology";
+import Technology from "../components/treandingCategory/Technology";
+import Entertainment from "../components/treandingCategory/Entertainment";
+import Politics from "../components/treandingCategory/Politics";
+import FashionAndBeuty from "../components/treandingCategory/FashionAndBeuty";
 
 
 
@@ -12,7 +16,9 @@ function Home() {
   const [error, setError] = useState<string>("");
   const [loading,setLoading] = useState<boolean>(false);
   const [slide,setSlide] = useState<number>(0);
-  
+
+  //state for trending categories
+  const [active,setAcitev] = useState<string>("first");
 
   useEffect(() => {
     const fetchBlogData = async () => {
@@ -84,12 +90,38 @@ function Home() {
           <PopulerNews posts={blogData.filter((item => item.tags)).slice(0,1)} />
       </section>
       <section className="py-[15px] md:py-[50px] flex flex-wrap flex-col items-center gap-12">
-        <h2 className="text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold mb-8 md:mb-5 flex">Explore 
+        <h2 className="text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold md:mb-5 flex">Explore 
             <p className="text-yellow-500 ml-4">Technology</p>
           </h2>
-          <div className="md:w-[1170px] flex flex-wrap justify-between">
+          <div className="md:w-[1170px] border px-2 rounded-2xl mx-1 md:mx-0 border-gray-600 flex flex-wrap justify-between">
             <ExploreTechnology posts={blogData.filter((item) => item.category === "Technology").slice(0,6)}/>
           </div>
+      </section>
+      <section className="py-[15px] md:py-[50px] flex flex-wrap flex-col items-center gap-12">
+        <h2 className="text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold md:mb-5 flex">Trending 
+            <p className="text-yellow-500 ml-4">Categories</p>
+          </h2>
+          <div className="w-full md:w-[1170px] flex flex-wrap gap-y-2">
+              <div className="w-full flex flex-wrap border border-gray-500 md:rounded-t-xl">
+                <div className="w-1/4 flex justify-center border-x-[1px] border-l-0 border-gray-500  py-3"><button onClick={()=>setAcitev("first")} className={`${active === "first"? "text-yellow-500":"text-yellow-500/50"} text-[10px] md:text-xl font-semibold`}>Technology</button></div>
+                <div className="w-1/4 flex justify-center border-x-[1px] border-gray-500  py-3"><button onClick={()=>setAcitev("second")} className={`${active === "second"? "text-yellow-500":"text-yellow-500/50"} text-[10px] md:text-xl font-semibold`}>Entertainment</button></div>
+                <div className="w-1/4 flex justify-center border-x-[1px] border-gray-500  py-3"><button onClick={()=>setAcitev("third")} className={`${active === "third"? "text-yellow-500":"text-yellow-500/50"} text-[10px] md:text-xl font-semibold`}>Politics</button></div>
+                <div className="w-1/4 flex justify-center border-x-[1px] border-r-0 border-gray-500  py-3"><button onClick={()=>setAcitev("fourth")} className={`${active === "fourth"? "text-yellow-500":"text-yellow-500/50"} text-[10px] md:text-xl font-semibold`}>Fashion</button></div>
+              </div>
+
+              <div className={`${active === "first"? "block":"hidden"} w-full md:border border-gray-500 md:rounded-b-xl md:p-3 flex flex-wrap gap-5`}>
+                <Technology posts={blogData.filter((items) => items.category === "Technology").slice(0,7)}/>
+              </div>
+              <div className={`${active === "second"? "block":"hidden"} w-full md:border border-gray-500 md:rounded-b-xl md:p-3 flex flex-wrap gap-5`}>
+                <Entertainment posts={blogData.filter((items) => items.category === "Entertainment").slice(0,7)}/>
+              </div>
+              <div className={`${active === "third"? "block":"hidden"} w-full md:border border-gray-500 md:rounded-b-xl md:p-3 flex flex-wrap gap-5`}>
+                <Politics posts={blogData.filter((items) => items.category === "Politics & Social Issues").slice(0,7)}/>
+              </div>
+              <div className={`${active === "fourth"? "block":"hidden"} w-full md:border border-gray-500 md:rounded-b-xl md:p-3 flex flex-wrap gap-5`}>
+                <FashionAndBeuty posts={blogData.filter((items) => items.category === "Fashion & Beauty").slice(0,7)}/>
+              </div>
+            </div>
       </section>
     </>
   );
