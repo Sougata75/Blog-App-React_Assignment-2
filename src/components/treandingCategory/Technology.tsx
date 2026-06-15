@@ -1,7 +1,7 @@
 import type React from "react"
 import type { PropCards } from "../../typescript/type/homePropType"
 import { useNavigate } from "react-router-dom"
-import { ArrowUpLeft, ArrowUpRight } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 
 
 const Technology:React.FC<PropCards> = ({posts}) => {
