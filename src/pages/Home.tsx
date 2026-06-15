@@ -87,10 +87,12 @@ function Home() {
         </div>
       </section>
       <section className="py-[15px] md:py-[50px] flex flex-wrap flex-col items-center md:gap-12 justify-center">
-        <h2 className="text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold mb-8 md:mb-5 flex">Populer 
+        <div className="w-full bg-gray-900 py-5 md:py-12 flex flex-wrap flex-col items-center gap-5 md:gap-12">
+          <h2 className="text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold mb-8 md:mb-5 flex">Populer 
             <p className="text-yellow-500 ml-4">News</p>
           </h2>
           <PopulerNews posts={blogData.filter((item => item.tags)).slice(0,1)} />
+        </div>
       </section>
       <section className="py-[15px] md:py-[50px] flex flex-wrap flex-col items-center gap-12">
         <h2 className="text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold md:mb-5 flex">Explore 
@@ -100,31 +102,33 @@ function Home() {
             <ExploreTechnology posts={blogData.filter((item) => item.category === "Technology").slice(0,6)}/>
           </div>
       </section>
-      <section className="py-[15px] md:py-[50px] flex flex-wrap flex-col items-center gap-12">
-        <h2 className="text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold md:mb-5 flex">Trending 
+      <section className="py-[15px] md:py-[50px]">
+        <div className="w-full bg-gray-900 py-5 md:py-12 flex flex-wrap flex-col items-center gap-5 md:gap-12">
+          <h2 className="text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold md:mb-5 flex">Trending 
             <p className="text-yellow-500 ml-4">Categories</p>
           </h2>
-          <div className="w-full md:w-[1170px] flex flex-wrap gap-y-2">
-              <div className="w-full flex flex-wrap border border-gray-500 md:rounded-t-xl">
-                <div className="w-1/4 flex justify-center border-x-[1px] border-l-0 border-gray-500  py-3"><button onClick={()=>setAcitev("first")} className={`${active === "first"? "text-yellow-500":"text-yellow-500/50"} text-[10px] md:text-xl font-semibold`}>Technology</button></div>
-                <div className="w-1/4 flex justify-center border-x-[1px] border-gray-500  py-3"><button onClick={()=>setAcitev("second")} className={`${active === "second"? "text-yellow-500":"text-yellow-500/50"} text-[10px] md:text-xl font-semibold`}>Entertainment</button></div>
-                <div className="w-1/4 flex justify-center border-x-[1px] border-gray-500  py-3"><button onClick={()=>setAcitev("third")} className={`${active === "third"? "text-yellow-500":"text-yellow-500/50"} text-[10px] md:text-xl font-semibold`}>Politics</button></div>
-                <div className="w-1/4 flex justify-center border-x-[1px] border-r-0 border-gray-500  py-3"><button onClick={()=>setAcitev("fourth")} className={`${active === "fourth"? "text-yellow-500":"text-yellow-500/50"} text-[10px] md:text-xl font-semibold`}>Fashion</button></div>
-              </div>
+          <div className="w-full  md:w-[1170px] flex flex-wrap md:gap-y-2">
+              <div className="w-full flex flex-wrap justify-between px-2 md:px-0 py-4">
+                <div onClick={()=>setAcitev("first")}  className="w-[23%] md:w-[24.5%] border border-gray-500 rounded-md flex justify-center py-2 md:py-3"><button onClick={()=>setAcitev("first")} className={`${active === "first"? "text-yellow-500":"text-yellow-500/50"} text-[10px] md:text-xl font-semibold  `}>Technology</button></div>
+                <div onClick={()=>setAcitev("second")} className="w-[23%] md:w-[24.5%] border border-gray-500 rounded-md flex justify-center py-2 md:py-3"><button onClick={()=>setAcitev("second")} className={`${active === "second"? "text-yellow-500":"text-yellow-500/50"} text-[10px] md:text-xl font-semibold  `}>Entertainment</button></div>
+                <div onClick={()=>setAcitev("third")}  className="w-[23%] md:w-[24.5%] border border-gray-500 rounded-md flex justify-center py-2 md:py-3"><button onClick={()=>setAcitev("third")} className={`${active === "third"? "text-yellow-500":"text-yellow-500/50"} text-[10px] md:text-xl font-semibold  `}>Politics</button></div>
+                <div onClick={()=>setAcitev("fourth")} className="w-[23%] md:w-[24.5%] border border-gray-500 rounded-md flex justify-center py-2 md:py-3"><button onClick={()=>setAcitev("fourth")} className={`${active === "fourth"? "text-yellow-500":"text-yellow-500/50"} text-[10px] md:text-xl font-semibold  `}>Fashion</button></div>
+               </div>
 
-              <div className={`${active === "first"? "block":"hidden"} w-full md:border border-gray-500 md:rounded-b-xl md:p-3 flex flex-wrap gap-5`}>
+              <div className={`${active === "first"? "block":"hidden"} w-full border border-x-0 border-t-0  border-gray-600 flex flex-wrap gap-5`}>
                 <Technology posts={blogData.filter((items) => items.category === "Technology").slice(0,7)}/>
               </div>
-              <div className={`${active === "second"? "block":"hidden"} w-full md:border border-gray-500 md:rounded-b-xl md:p-3 flex flex-wrap gap-5`}>
+              <div className={`${active === "second"? "block":"hidden"} w-full border border-x-0 border-t-0  border-gray-600 flex flex-wrap gap-5`}>
                 <Entertainment posts={blogData.filter((items) => items.category === "Entertainment").slice(0,7)}/>
               </div>
-              <div className={`${active === "third"? "block":"hidden"} w-full md:border border-gray-500 md:rounded-b-xl md:p-3 flex flex-wrap gap-5`}>
+              <div className={`${active === "third"? "block":"hidden"} w-full border border-x-0 border-t-0  border-gray-600 flex flex-wrap gap-5`}>
                 <Politics posts={blogData.filter((items) => items.category === "Politics & Social Issues").slice(0,7)}/>
               </div>
-              <div className={`${active === "fourth"? "block":"hidden"} w-full md:border border-gray-500 md:rounded-b-xl md:p-3 flex flex-wrap gap-5`}>
+              <div className={`${active === "fourth"? "block":"hidden"} w-full border border-x-0 border-t-0  border-gray-600 flex flex-wrap gap-5`}>
                 <FashionAndBeuty posts={blogData.filter((items) => items.category === "Fashion & Beauty").slice(0,7)}/>
               </div>
             </div>
+        </div>
       </section>
       <section  className="py-[15px] md:py-[50px] bg-gray-900 flex justify-center px-2 md:px-0">
         <CommonSection/>
