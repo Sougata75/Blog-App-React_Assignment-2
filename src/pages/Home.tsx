@@ -9,6 +9,7 @@ import Entertainment from "../components/treandingCategory/Entertainment";
 import Politics from "../components/treandingCategory/Politics";
 import FashionAndBeuty from "../components/treandingCategory/FashionAndBeuty";
 import CommonSection from "../components/CommonSection";
+import Loading from "../assets/vecteezy_icon-loading-circle-two-line-loop-out-animation-with-a_4844747.mp4";
 
 
 
@@ -23,6 +24,7 @@ function Home() {
 
   useEffect(() => {
     const fetchBlogData = async () => {
+      setLoading(true);
       try{
         const blogs = await axios.get(`https://jsonfakery.com/blogs`);
         setBlogData(blogs?.data);
@@ -49,7 +51,19 @@ function Home() {
 
   return (
     <>
-      <section className="mb-[20px] md:mb-[50px] pb-[10px] md:pb-[50px]">
+      {loading? (
+        <div className="w-full h-[60vh] md:h-[100vh] flex justify-center bg-black items-center text-3xl text-white">
+          <video
+            className="w-[200px] md:w-[400px] h-[200px] md:h-[400px]"
+            src={Loading}
+            autoPlay
+            muted
+            loop
+          ></video>
+        </div>
+      ):(
+        <>
+        <section className="mb-[20px] md:mb-[50px] pb-[10px] md:pb-[50px]">
         <div className="flex  justify-center bg-cover bg-center md:h-[80vh]"
         style={{ background: `url(${blogData[slide]?.featured_image})` }}>
         <div className="w-full h-full py-8 md:py-[100px] flex justify-center items-end bg-gradient-to-b from-transparent to-gray-950">
@@ -133,6 +147,8 @@ function Home() {
       <section  className="py-[15px] md:py-[50px] bg-gray-900 flex justify-center px-2 md:px-0">
         <CommonSection/>
       </section>
+        </>
+      )}
     </>
   );
 }
