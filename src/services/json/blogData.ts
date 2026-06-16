@@ -7,10 +7,10 @@ export const pages = [
         path: "/blogs",
         label: "Blogs"
     },
-    {
-        path: "/podcasts",
-        label: "Podcast"
-    },
+    // {
+    //     path: "/podcasts",
+    //     label: "Podcast"
+    // },
     {
         path: "/author",
         label: "Author"

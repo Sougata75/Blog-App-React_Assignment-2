@@ -10,6 +10,7 @@ import Politics from "../components/treandingCategory/Politics";
 import FashionAndBeuty from "../components/treandingCategory/FashionAndBeuty";
 import CommonSection from "../components/CommonSection";
 import Loading from "../assets/vecteezy_icon-loading-circle-two-line-loop-out-animation-with-a_4844747.mp4";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -21,6 +22,7 @@ function Home() {
 
   //state for trending categories
   const [active,setAcitev] = useState<string>("first");
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0,0);
@@ -64,7 +66,7 @@ function Home() {
         </div>
       ):(
         <>
-        <section className="mb-[20px] md:mb-[50px] pb-[10px] md:pb-[50px]">
+        <section className="pb-[10px] md:pb-[50px]">
         <div className="flex  justify-center bg-cover bg-center md:h-[80vh]"
         style={{ background: `url(${blogData[slide]?.featured_image})` }}>
         <div className="w-full h-full py-8 md:py-[100px] flex justify-center items-end bg-gradient-to-b from-transparent to-gray-950">
@@ -74,18 +76,12 @@ function Home() {
             Welcome To
             <p className="font-bold text-yellow-500">TechBlog</p>
           </h1>
-          <div>
-            <p className="text-white text-[8px] md:text-xl px-6 md:px-0">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-            consectetur maiores unde nostrum dolorum ad optio, autem distinctio
-            natus! Molestias iusto pariatur explicabo qui accusantium aut
-            aliquid, delectus et consectetur. Lorem ipsum dolor sit, amet
-            consectetur adipisicing elit. Voluptas asperiores vel non repellat
-            eius officiis eos voluptates, itaque voluptatum, harum est, delectus
-            sint nobis consequuntur praesentium. Ratione, qui voluptates. Error?
-          </p>
+          <div className="w-[90%] md:w-full flex flex-wrap justify-center md:justify-normal gap-y-2">
+            <h2 className="font-bold text-lg md:text-3xl text-white">{blogData[slide]?.title}</h2>
+            <h3 className="font-semibold text-sm md:text-[16px] text-yellow-500">{blogData[slide]?.subtitle}</h3>
+            <p className="text-white text-[8px] md:text-xl px-6 md:px-0">{blogData[slide]?.summary}{blogData[slide]?.summary}</p>
           </div>
-          <button className='text-yellow-500 border border-white bg-black px-2 py-1 md:px-8 md:py-4 text-sm md:text-[18px] rounded-lg md:rounded-2xl'>Explore More</button>
+          <button onClick={() => navigate(`/blogPost/${blogData[slide]?.id}`)} className='text-black font-semibold bg-yellow-500 px-2 py-1 md:px-7 md:py-4 text-sm md:text-[18px] rounded-lg md:rounded-xl hover:bg-yellow-700 transition-all'>View Full Article</button>
           </div>
         </div>
         </div>
@@ -113,7 +109,7 @@ function Home() {
         <h2 className="text-center text-gray-400 items-center text-3xl md:text-[72px] font-bold md:mb-5 flex">Explore 
             <p className="text-yellow-500 ml-4">Technology</p>
           </h2>
-          <div className="md:w-[1170px] border px-2 rounded-2xl mx-1 md:mx-0 border-gray-600 flex flex-wrap justify-between">
+          <div className="md:w-[1170px]  px-2  mx-1 md:mx-0 flex flex-wrap justify-between">
             <ExploreTechnology posts={blogData.filter((item) => item.category === "Technology").slice(0,6)}/>
           </div>
       </section>

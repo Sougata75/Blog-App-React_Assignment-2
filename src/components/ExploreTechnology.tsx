@@ -29,8 +29,9 @@ const ExploreTechnology:React.FC<PropCards> = ({posts}) => {
   return (
     <>
     {posts?.map((item) => (
-        <div key={item.id} className="w-full border border-y-1 border-x-0 border-gray-600 py-1 md:py-2 flex flex-wrap justify-between gap-2 md:gap-0">
-            <div className="w-full md:w-1/3 md:border md:border-y-0 md:border-l-0 border-gray-600 flex justify-between px-2" >
+        <div key={item.id} className="w-full flex flex-wrap">
+            <div className="w-full flex flex-wrap pl-0 md:pl-3 my-2 rounded-lg  py-4 md:py-2 justify-between ">
+                <div className="w-full md:w-1/3 md:border md:border-y-0 md:border-l-0 border-gray-600 flex justify-between px-2" >
             <div className="w-[80px] h-[80px] bg-cover bg-center rounded-full " style={{backgroundImage:`url(${item.user.profile_pic})`}}></div>
             <div className="w-[60%]">
                 <h3 className="text-gray-500 font-bold py-2">{item.user.first_name} {item.user.middle_name} {item.user.last_name}</h3>
@@ -65,6 +66,7 @@ const ExploreTechnology:React.FC<PropCards> = ({posts}) => {
                 <div>
                     <button onClick={() => navigation(`/blogPost/${item.id}`,{state:item})} className="text-black bg-yellow-500 py-2 p-[120px] md:px-4 md:py-3 font-semibold hover:bg-yellow-700 rounded-md md:rounded-xl">View More</button>
                 </div>
+            </div>
             </div>
         </div>
     ))}

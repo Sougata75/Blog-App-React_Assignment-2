@@ -16,8 +16,8 @@ function CommonSection() {
                 <div className='w-full hidden md:block'>
                     <p className='text-xl text-white bg-gray-700 inline-block px-4 py-1 rounded-md'>Learn,Connetc,and Innovate</p>
                 </div>
-                <h2 className='text-xl md:text-5xl text-white font-semibold mb-2 md:mb-4'>Be Part of the Future Revolution</h2>
-                <p className='text-gray-500 text-sm md:text-lg'>Immerse yourself in the world of future technology. Explore our comprehensive resources, connect with fellow tech enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.</p>
+                <h2 className='text-xl md:text-5xl text-white font-semibold pl-2 md:pl-0 mb-2 md:mb-4'>Be Part of the Future Revolution</h2>
+                <p className='text-gray-500 text-sm px-2 md:px-0 md:text-lg'>Immerse yourself in the world of future technology. Explore our comprehensive resources, connect with fellow tech enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.</p>
             </div>
         </div>
         <div className='w-full flex flex-wrap justify-between bg-gray-950 p-4 rounded-xl border border-gray-800 gap-4 md:gap-0'>

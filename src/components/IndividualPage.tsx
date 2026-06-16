@@ -27,11 +27,10 @@ function IndividualPage() {
     });
   };
 
-  useEffect(() => {
-    window.scrollTo(0,0);
-  },[id])
+  const [min,setMin] = useState<number>(1);
 
   useEffect(() => {
+    window.scrollTo(0,0);
     const fetch = async () => {
       setLoading(true);
       try {
@@ -47,12 +46,19 @@ function IndividualPage() {
     };
 
     fetch();
-  }, []);
+
+     handleShowMore();
+  }, [id]);
+
 
   const post = data.filter((item) => item.id === id);
-  const similarData = showMore
-    .filter((item) => item.category === post?.[0]?.category)
-    .slice(1, 4);
+  const allSimilarData = showMore.filter((item) => item.category === post?.[0]?.category && item.id !== id);
+
+  const similarData = allSimilarData.slice(min, min+3);
+
+    const handleShowMore = () => {
+           setMin((prevCount) => prevCount + 3);
+    };
 
   return (
     <>
@@ -82,7 +88,7 @@ function IndividualPage() {
           </div>
 
           <div className="w-full md:w-[1170px] flex flex-wrap justify-between py-6 md:py-16">
-            <div className="w-full  md:w-[65%] px-2 md:px-0 md:border-r border-b pb-6 md:pb-12 border-gray-600 flex flex-wrap gap-3 md:gap-5">
+            <div className="w-full  md:w-[65%] px-2  md:px-0 md:pr-2 md:border-r border-b pb-6 md:pb-12 border-gray-600 flex flex-wrap gap-3 md:gap-5">
               <h2 className="text-gray-400 text-lg md:text-2xl font-semibold">
                 Introduction :
               </h2>
@@ -152,7 +158,7 @@ function IndividualPage() {
               </div>
             </div>
           </div>
-          <div className="w-full flex flex-wrap justify-center bg-gray-900 py-6 md:py-16">
+          <div className="w-full flex flex-wrap justify-center bg-gray-900 py-6 md:py-16 mb-6 md:mb-12">
             <div className="w-[1170px] flex flex-wrap px-2 md:px-0 gap-5">
                 <h2 className="w-full text-yellow-500 text-xl md:text-5xl font-bold mb-2 md:mb-5">View Similer Post's</h2>
               {similarData?.map((item) => (
@@ -180,9 +186,7 @@ function IndividualPage() {
                       </div>
                       <div>
                         <button
-                          onClick={() =>
-                            navigate(`/blogPost/${item.id}`, { state: item })
-                          }
+                          onClick={() => navigate(`/blogPost/${item.id}`, { state: item })}
                           className="text-black font-semibold bg-yellow-500 p-2 px-4 rounded-lg hover:translate-y-[-2px] hover:bg-yellow-700 transition-all"
                         >
                           Vire More
