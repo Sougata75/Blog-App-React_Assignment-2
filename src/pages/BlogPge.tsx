@@ -76,9 +76,9 @@ const navigate = useNavigate();
       <section className="pb-[15px] md:pb-[50px] flex justify-center">
         <div className="w-full h-[25vh] md:h-[50vh] bg-cover bg-center" style={{backgroundImage:`url(${Banner})`}}>
           <div className="w-full h-full py-8 md:py-[70px] flex justify-center items-end bg-gradient-to-b from-transparent to-gray-950">  
-             <div className="md:max-w-[1170px] h-auto w-full flex flex-wrap items-center">
-               <div className="flex flex-wrap justify-center items-end ">
-                 <h1 className=" text-[25px] justify-center md:justify-normal md:text-[75px] w-full font-bold text-gray-500 flex items-center gap-2 md:gap-4">
+             <div className="md:max-w-[1170px] h-auto w-full flex flex-wrap justify-center md:justify-normal items-center">
+               <div className="w-[80%] md:w-full flex flex-wrap justify-center items-end ">
+                 <h1 className=" text-[25px] justify-center md:justify-normal md:text-[75px] w-full font-bold text-gray-500 flex flex-wrap items-center gap-2 md:gap-4">
                   Explore The World of 
                  <p className="font-bold text-yellow-500">Headlines</p>
                  </h1>
@@ -89,13 +89,13 @@ const navigate = useNavigate();
       </section>
       <section className="py-[15px] md:py-[50px] pb-6 md:pb-0 px-2 md:px-0 flex justify-center">
         <div className="w-full md:w-[1170px] flex flex-wrap justify-between">
-          <div className="w-full flex justify-between border-b border-gray-600">
-            <div className="md:p-4 w-[30%]">
+          <div className="w-full flex justify-between px-2 mb-2 md:px-0 md:mb-0 border-b border-gray-600">
+            <div className="md:p-4 pb-3 md:pb-4 w-[30%]">
               <h3 className="text-gray-500 md:text-3xl font-semibold">Blogs :</h3>
             </div>
-            <div className="flex items-center">
+            <div className="pb-3 md:pb-0 flex items-center">
               <label className="text-gray-500 md:text-xl font-semibold">Category :</label>
-              <select onChange={(e)=> {setCategory(e.target.value);{/*setPage(1);*/}}} className="w-[150px] md:w-[300px] text-center md:font-semibold outline-none bg-transparent text-gray-500">
+              <select onChange={(e)=> {setCategory(e.target.value);{/*setPage(1);*/}}} className="w-[80px] md:w-[300px] text-center md:font-semibold outline-none bg-transparent text-gray-500">
                 {selectCatagory.map((item)=>(
                   <option className="text-gray-500" key={item} value={item}>{item}</option>
                 ))}
@@ -117,7 +117,7 @@ const navigate = useNavigate();
                   <p className="text-gray-600 my-2 font-semibold text-sm">{blog.summary}</p>
                 </div>
                 <div className="w-full pt-4 md:pt-0 md:w-[16%] flex justify-center items-center">
-                  <button onClick={()=> navigate(`/blogPost/${blog.id}`)} className="text-white flex gap-2 border border-gray-500 px-8 py-3 rounded-sm">View <ArrowUpRight color="#eab308"/></button>
+                  <button onClick={()=> navigate(`/blogPost/${blog.id}`)} className="text-white flex gap-2 border border-gray-500 px-20 md:px-8 py-2 md:py-3 rounded-md md:rounded-sm">View <ArrowUpRight color="#eab308"/></button>
                 </div>
               </div>
             ))}
