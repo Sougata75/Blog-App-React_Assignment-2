@@ -28,6 +28,10 @@ function IndividualPage() {
   };
 
   useEffect(() => {
+    window.scrollTo(0,0);
+  },[id])
+
+  useEffect(() => {
     const fetch = async () => {
       setLoading(true);
       try {

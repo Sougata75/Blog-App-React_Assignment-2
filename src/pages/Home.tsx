@@ -23,6 +23,7 @@ function Home() {
   const [active,setAcitev] = useState<string>("first");
 
   useEffect(() => {
+    window.scrollTo(0,0);
     const fetchBlogData = async () => {
       setLoading(true);
       try{
