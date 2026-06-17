@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import CommonSection from "../components/CommonSection"
-import type { DataType, User } from "../typescript/interface/blogInterface"
+import type { DataType } from "../typescript/interface/blogInterface"
 import Loading from "../assets/vecteezy_icon-loading-circle-two-line-loop-out-animation-with-a_4844747.mp4";
 import AuthorBanner from '../assets/Author.jpg.jpeg';
 import axios from "axios";
