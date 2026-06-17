@@ -11,6 +11,7 @@ import FashionAndBeuty from "../components/treandingCategory/FashionAndBeuty";
 import CommonSection from "../components/CommonSection";
 import { useNavigate } from "react-router-dom";
 import Loading from "../components/Loading";
+import UserReviews from "../components/UserReviews";
 
 
 
@@ -134,6 +135,9 @@ function Home() {
               </div>
             </div>
         </div>
+      </section>
+      <section className="py-[15px] md:py-[50px] mb-[15px] md:mb-[50px] flex flex-wrap justify-center">
+        <UserReviews/>
       </section>
       <section  className="py-[15px] md:py-[50px] bg-gray-900 flex justify-center px-2 md:px-0">
         <CommonSection/>

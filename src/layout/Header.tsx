@@ -7,7 +7,7 @@ function Header() {
     const [isActive, setIsActive] = useState<boolean>(false);
   return (
     <>
-   <nav>
+   <nav className=''>
     <div className='w-full flex justify-center items-center bg-black p-4'>
        <div className='max-w-[1170px] w-full flex flex-wrap justify-between'>
          <div className='flex items-center '>

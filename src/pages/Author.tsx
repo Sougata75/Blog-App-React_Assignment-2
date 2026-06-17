@@ -5,6 +5,7 @@ import AuthorBanner from '../assets/Author.jpg.jpeg';
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Loading from "../components/Loading";
+import UserReviews from "../components/UserReviews";
 
 
 function Author() {
@@ -60,8 +61,8 @@ function Author() {
           </div>
         </div>
       </section>
-      <section className="py-[15px] md:py-[50px] mb-4 md:mb-0 flex justify-center">
-        <div className="w-full px-1 md:px-0 md:w-[1170px] flex flex-wrap ">
+      <section className="py-[15px] md:py-[50px] border-b border-gray-600 flex justify-center">
+        <div className="w-full px-1 md:px-0 md:w-[1170px] flex flex-wrap mb-2 md:mb-0">
           <div className="w-full border-b border-gray-600 mb-6">
             <h2 className="text-gray-500 font-semibold text-xl mb-2">Authors:</h2>
           </div>
@@ -87,6 +88,9 @@ function Author() {
           ))}
           </div>
         </div>
+      </section>
+      <section className="py-[15px] md:py-[50px] mb-[15px] md:mb-[50px] flex flex-wrap justify-center">
+        <UserReviews/>
       </section>
       <section className="py-[15px] md:py-[50px] bg-gray-900 flex justify-center">
         <CommonSection/>

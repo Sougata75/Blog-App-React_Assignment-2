@@ -31,7 +31,7 @@ function IndividualPage() {
 
   useEffect(() => {
     window.scrollTo(0,0);
-    const fetch = async () => {
+    const fetchData = async () => {
       setLoading(true);
       try {
         const response = await axios.get(`https://jsonfakery.com/blogs`);
@@ -45,7 +45,7 @@ function IndividualPage() {
       }
     };
 
-    fetch();
+    fetchData();
 
      handleShowMore();
   }, [id]);

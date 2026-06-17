@@ -7,6 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { selectCatagory } from "../services/json/blogData";
 import Loading from "../components/Loading";
+import UserReviews from "../components/UserReviews";
 
 
 function BlogPge() {
@@ -64,7 +65,7 @@ const navigate = useNavigate();
             </div>
         </div>
       </section>
-      <section className="py-[15px] md:py-[50px] pb-6 md:pb-0 px-2 md:px-0 flex justify-center">
+      <section className="py-[15px] md:py-[50px] border-b border-gray-600 px-2 md:px-0 flex justify-center">
         <div className="w-full md:w-[1170px] flex flex-wrap justify-between">
           <div className="w-full flex justify-between px-2 mb-2 md:px-0 md:mb-0 border-b border-gray-600">
             <div className="md:p-3 pb-3 w-[30%]">
@@ -104,6 +105,9 @@ const navigate = useNavigate();
             </div> */}
           </div>
         </div>
+      </section>
+      <section className="py-[15px] md:py-[50px] mb-[15px] md:mb-[50px] flex flex-wrap justify-center">
+        <UserReviews/>
       </section>
       <section className="py-[15px] md:py-[50px] bg-gray-900 flex justify-center">
         <CommonSection/>

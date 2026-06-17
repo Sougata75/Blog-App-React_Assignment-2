@@ -5,6 +5,7 @@ import axios from "axios";
 import CommonSection from "./CommonSection";
 import { ArrowUpRight } from "lucide-react";
 import Loading from "./Loading";
+import UserReviews from "./UserReviews";
 
 
 
@@ -61,7 +62,7 @@ function IndividualAuthorPage() {
           </div>
         </div>
       </section>
-      <section className="py-[15px] md:py-[50px] mb-4 md:mb-0 flex justify-center">
+      <section className="py-[15px] md:py-[50px] border-b border-gray-600 mb-4 md:mb-0 flex justify-center">
         <div className="w-full px-2 md:px-0 md:w-[1170px] flex flex-wrap justify-between">
           <div className="w-full border-b border-gray-600 mb-6">
             <h2 className="text-gray-500 font-semibold text-xl mb-2">Post's By: {authorsPosts?.[0]?.user.first_name} {authorsPosts?.[0]?.user.middle_name} {authorsPosts?.[0]?.user.last_name}</h2>
@@ -92,6 +93,9 @@ function IndividualAuthorPage() {
           </div>
 
         </div>
+      </section>
+      <section className="py-[15px] md:py-[50px] mb-[15px] md:mb-[50px] flex flex-wrap justify-center">
+        <UserReviews/>
       </section>
       <section className="py-[15px] md:py-[50px] bg-gray-900 flex justify-center">
         <CommonSection/>

@@ -47,3 +47,11 @@ export interface Tags {
         created_at: string,
         updated_at: string
       }
+
+export interface Reviews {
+    postId: number,
+    id: number,
+    name: string,
+    email: string,
+    body: string
+}
