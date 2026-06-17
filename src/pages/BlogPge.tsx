@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import CommonSection from "../components/CommonSection"
 import type { DataType } from "../typescript/interface/blogInterface";
 import axios from "axios";
-import Loading from "../assets/vecteezy_icon-loading-circle-two-line-loop-out-animation-with-a_4844747.mp4";
 import Banner from '../assets/hero-banner.jpg';
 import { ArrowUpRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { selectCatagory } from "../services/json/blogData";
+import Loading from "../components/Loading";
 
 
 function BlogPge() {
@@ -45,15 +45,9 @@ const navigate = useNavigate();
   return (
     <>
     {loading? (
-      <div className="w-full h-[60vh] md:h-[100vh] flex justify-center bg-black items-center text-3xl text-white">
-          <video
-            className="w-[200px] md:w-[400px] h-[200px] md:h-[400px]"
-            src={Loading}
-            autoPlay
-            muted
-            loop
-          ></video>
-        </div>
+      <>
+          <Loading/>
+      </>
     ):(
       <>
       <section className="pb-[15px] md:pb-[50px] flex justify-center">

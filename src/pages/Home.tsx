@@ -9,8 +9,8 @@ import Entertainment from "../components/treandingCategory/Entertainment";
 import Politics from "../components/treandingCategory/Politics";
 import FashionAndBeuty from "../components/treandingCategory/FashionAndBeuty";
 import CommonSection from "../components/CommonSection";
-import Loading from "../assets/vecteezy_icon-loading-circle-two-line-loop-out-animation-with-a_4844747.mp4";
 import { useNavigate } from "react-router-dom";
+import Loading from "../components/Loading";
 
 
 
@@ -55,15 +55,9 @@ function Home() {
   return (
     <>
       {loading? (
-        <div className="w-full h-[60vh] md:h-[100vh] flex justify-center bg-black items-center text-3xl text-white">
-          <video
-            className="w-[200px] md:w-[400px] h-[200px] md:h-[400px]"
-            src={Loading}
-            autoPlay
-            muted
-            loop
-          ></video>
-        </div>
+        <>
+          <Loading/>
+        </>
       ):(
         <>
         <section className="pb-[10px] md:pb-[50px]">

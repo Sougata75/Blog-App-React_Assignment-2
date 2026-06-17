@@ -9,6 +9,7 @@ import { lazy, Suspense } from 'react';
 import Notfound from '../components/Notfound';
 import ErrorBoundery from '../components/ErrorBoundery';
 import IndividualPage from '../components/IndividualPage';
+import IndividualAuthorPage from '../components/IndividualAuthorPage';
 
 const Home = lazy(() => import("../pages/Home"));
 
@@ -63,6 +64,15 @@ const Routes = createBrowserRouter([
                 element: (
                 <Suspense fallback = {<p>Loading ..... </p>}>
                 <IndividualPage/>
+                </Suspense>
+                ),
+                errorElement: <ErrorBoundery/>   
+            },
+            {
+             path: "/authorsPosts/:id",
+                element: (
+                <Suspense fallback = {<p>Loading ..... </p>}>
+                <IndividualAuthorPage/>
                 </Suspense>
                 ),
                 errorElement: <ErrorBoundery/>   

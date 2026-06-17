@@ -2,8 +2,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import type { DataType } from "../typescript/interface/blogInterface";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Loading from "../assets/vecteezy_icon-loading-circle-two-line-loop-out-animation-with-a_4844747.mp4";
 import { Send, ThumbsUp } from "lucide-react";
+import Loading from "./Loading";
 
 function IndividualPage() {
   const navigate = useNavigate();
@@ -63,15 +63,9 @@ function IndividualPage() {
   return (
     <>
       {loading ? (
-        <div className="w-full h-[60vh] md:h-[100vh] flex justify-center bg-black items-center text-3xl text-white">
-          <video
-            className="w-[200px] md:w-[400px] h-[200px] md:h-[400px]"
-            src={Loading}
-            autoPlay
-            muted
-            loop
-          ></video>
-        </div>
+        <>
+          <Loading/>
+        </>
       ) : (
         <div className="flex flex-wrap justify-center ">
           <div
