@@ -66,11 +66,11 @@ function Author() {
             <h2 className="text-gray-500 font-semibold text-xl mb-2">Authors:</h2>
           </div>
           <div className="w-full flex flex-wrap gap-y-4 md:gap-6">
-            {authors?.slice(0,5).map((id) => (
-            <div key={id?.id} className="w-full flex flex-wrap justify-between bg-gray-900">
+            {authors?.map((id) => (
+            <div key={id?.id} className="w-full flex flex-wrap justify-between">
               <div className="w-[45%] h-[150px] md:h-[400px] bg-cover bg-center rounded-lg" style={{backgroundImage:`url(${id.profile_pic})`}}></div>
               <div className="w-[52%] md:w-[50%] flex flex-wrap py-1 md:py-5">
-                <div className="w-full flex flex-wrap h-[90px] md:h-[200px]">
+                <div className="w-full flex flex-wrap h-[75px] md:h-[200px]">
                   <h3 className="text-gray-500 text-[16px] md:text-4xl font-black w-full md:mb-3">{id.first_name} {id.middle_name} {id.last_name}</h3>
                   <p className="text-gray-600 font-semibold text-[8px] md:text-xl w-full">User Name: {id.username}</p>
                   <p className="text-gray-600 font-semibold hidden md:block text-[8px] md:text-xl w-full">Email: {id.email}</p>
