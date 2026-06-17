@@ -6,6 +6,7 @@ import Loading from "../assets/vecteezy_icon-loading-circle-two-line-loop-out-an
 import Banner from '../assets/hero-banner.jpg';
 import { ArrowUpRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { selectCatagory } from "../services/json/blogData";
 
 
 function BlogPge() {
@@ -16,25 +17,7 @@ function BlogPge() {
 
   //const [page,setPage] = useState<number>(1);
   // const blogPage = 20;
-
-  const selectCatagory = [
-  "All",  
-  "Art & Culture",
-  "Education",
-  "Entertainment",
-  "Environment & Sustainability",
-  "Fashion & Beauty",
-  "Finance & Business",
-  "Food & Drink",
-  "Health & Wellness",
-  "Lifestyle",
-  "Politics & Social Issues",
-  "Programming & Development",
-  // "Science & Space",
-  "Sports & Fitness",
-  "Technology",
-  "Travel & Leisure"
-]
+  
 
 const navigate = useNavigate();
 
@@ -90,8 +73,8 @@ const navigate = useNavigate();
       <section className="py-[15px] md:py-[50px] pb-6 md:pb-0 px-2 md:px-0 flex justify-center">
         <div className="w-full md:w-[1170px] flex flex-wrap justify-between">
           <div className="w-full flex justify-between px-2 mb-2 md:px-0 md:mb-0 border-b border-gray-600">
-            <div className="md:p-4 pb-3 md:pb-4 w-[30%]">
-              <h3 className="text-gray-500 md:text-3xl font-semibold">Blogs :</h3>
+            <div className="md:p-3 pb-3 w-[30%]">
+              <h3 className="text-gray-500 md:text-xl font-semibold">Blogs :</h3>
             </div>
             <div className="pb-3 md:pb-0 flex items-center">
               <label className="text-gray-500 md:text-xl font-semibold">Category :</label>
@@ -117,7 +100,7 @@ const navigate = useNavigate();
                   <p className="text-gray-600 my-2 font-semibold text-sm">{blog.summary}</p>
                 </div>
                 <div className="w-full pt-4 md:pt-0 md:w-[16%] flex justify-center items-center">
-                  <button onClick={()=> navigate(`/blogPost/${blog.id}`)} className="text-white flex gap-2 border border-gray-500 px-20 md:px-8 py-2 md:py-3 rounded-md md:rounded-sm">View <ArrowUpRight color="#eab308"/></button>
+                  <button onClick={()=> navigate(`/blogPost/${blog.id}`)} className="text-white flex gap-2 border border-gray-500 px-20 md:px-8 py-2 md:py-3 rounded-md md:rounded-sm md:hover:translate-y-[-2px] transition-all">View <ArrowUpRight color="#eab308"/></button>
                 </div>
               </div>
             ))}

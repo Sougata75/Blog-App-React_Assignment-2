@@ -76,10 +76,10 @@ function Home() {
             Welcome To
             <p className="font-bold text-yellow-500">TechBlog</p>
           </h1>
-          <div className="w-[90%] md:w-full flex flex-wrap justify-center md:justify-normal gap-y-2">
-            <h2 className="font-bold text-lg md:text-3xl text-white">{blogData[slide]?.title}</h2>
-            <h3 className="font-semibold text-sm md:text-[16px] text-yellow-500">{blogData[slide]?.subtitle}</h3>
-            <p className="text-white text-[8px] md:text-xl px-6 md:px-0">{blogData[slide]?.summary}{blogData[slide]?.summary}</p>
+          <div className="w-[90%] md:w-full flex flex-wrap gap-y-2">
+            <h2 className="font-bold text-lg text-start md:text-3xl text-white">{blogData[slide]?.title}</h2>
+            <h3 className="font-semibold hidden md:block text-start text-lg my-3 text-yellow-500">{blogData[slide]?.subtitle}</h3>
+            <p className="text-white text-[8px] md:text-xl text-start">{blogData[slide]?.summary}{blogData[slide]?.summary}</p>
           </div>
           <button onClick={() => navigate(`/blogPost/${blogData[slide]?.id}`)} className='text-black font-semibold bg-yellow-500 px-2 py-1 md:px-7 md:py-4 text-sm md:text-[18px] rounded-lg md:rounded-xl hover:bg-yellow-700 transition-all'>View Full Article</button>
           </div>

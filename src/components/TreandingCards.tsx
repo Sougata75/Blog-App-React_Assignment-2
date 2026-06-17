@@ -23,7 +23,7 @@ const TreandingPosts:React.FC<PropCards> = ({posts}) => {
   return (
     <>
     {posts?.map((item) => (
-        <div key={item.id} className="w-full md:w-1/3 p-3 md:p-5 md:h-[430px] flex flex-col justify-between rounded-2xl border md:border-none border-b-1 border-gray-500 border-x-0 ">
+        <div key={item.id} className="w-full md:w-1/3 p-3 md:p-5 md:h-[430px] flex flex-col justify-between rounded-2xl ">
           <div className="w-full bg-cover bg-center h-[200px] rounded-xl " style={{backgroundImage: `url(${item.featured_image})`}} ></div>
           <h3 className="mt-6 mb-3 text-[15px] text-white font-bold"> {item.title}</h3>
           <p className="w-full text-gray-600">{item.category}</p>

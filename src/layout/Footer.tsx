@@ -1,9 +1,12 @@
 import { NavLink } from "react-router-dom"
 import { pages } from "../services/json/blogData"
 import { Atom } from "lucide-react"
+import { useState } from "react"
 
 
 function Footer() {
+  const [subscribe,setSubscribe] = useState<string>();
+  console.log("User:", subscribe)
   return (
     <>
     <div className="w-full md:h-[400px] py-5 md:py-10 flex flex-wrap justify-center bg-black">
@@ -44,10 +47,10 @@ function Footer() {
               <form>
                 <div className="flex justify-between items-center  mb-2 md:mb-5">
                   <label className="text-white  md:text-lg">Email</label>
-                  <input className="w-[80%] p-1 md:px-1 md:py-2 rounded-xl" type="text" name="email" placeholder="Enter you email . . . ." />
+                  <input onChange={(e)=>setSubscribe(() => e.target.value)} className="w-[80%] p-1 md:px-1 md:py-2 rounded-xl" type="text" placeholder="Enter you email . . . ." />
                 </div>
 
-                <button type="submit" className="bg-yellow-500 w-full p-1 md:p-2 rounded-xl text-black font-semibold hover:bg-yellow-700">Subscribe</button>
+                <button onClick={()=>setSubscribe('')} className="bg-yellow-500 w-full p-1 md:p-2 rounded-xl text-black font-semibold hover:bg-yellow-700">Subscribe</button>
               </form>
             </div>
             </div>
