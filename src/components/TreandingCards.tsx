@@ -34,7 +34,7 @@ const TreandingPosts:React.FC<PropCards> = ({posts}) => {
               <button className="text-gray-600"><Send color=" #4b5563 "/></button>
             </div>
             <div>
-              <button onClick={() => navigate(`/blogPost/${item.id}`,{state:item})} className="text-black font-semibold bg-yellow-500 p-2 px-4 rounded-lg hover:translate-y-[-2px] hover:bg-yellow-700 transition-all">Vire More</button>
+              <button onClick={() => navigate(`/blogPost/${item.id}`,{state:item})} className="text-black font-semibold bg-yellow-500 p-2 px-4 rounded-lg hover:translate-y-[-2px] hover:bg-yellow-700 transition-all">View More</button>
             </div>
           </div>
           </div>

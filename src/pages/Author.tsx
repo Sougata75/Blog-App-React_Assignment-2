@@ -36,7 +36,7 @@ function Author() {
   const allAuthors = apiData?.map((data) => data?.user).filter(Boolean);
   const authors = allAuthors?.filter((user,index,self) => 
     index === self.findIndex((u) => u?.id === user?.id)
-  );
+  ).slice(0,30);
  
 
   return (
