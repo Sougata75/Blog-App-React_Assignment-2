@@ -48,7 +48,7 @@ const ExploreTechnology:React.FC<PropCards> = ({posts}) => {
                 <button onClick={() =>handleComment(item.id)}><MessageCircle color={active.includes(item.id)? "#eab308":"#6b7280"}/></button>
                 <button><Send color="#6b7280"/></button>
             </div>
-            <div className={`${active.includes(item.id)? "block":"hidden"} w-full border border-gray-600 rounded-xl p-2 `}>
+            <div className={`${active.includes(item.id)? "block":"hidden"} w-[95%] border border-gray-600 rounded-xl mb-2 md:mb-0 p-2 `}>
                 {item.comments && item.comments.length > 0? (
                     <div>
                         <h3 className="text-gray-600 pb-2">Comments - </h3>

@@ -95,7 +95,7 @@ const navigate = useNavigate();
                   <p className="text-gray-600 my-2 font-semibold text-sm">{blog.summary}</p>
                 </div>
                 <div className="w-full pt-4 md:pt-0 md:w-[16%] flex justify-center items-center">
-                  <button onClick={()=> navigate(`/blogPost/${blog.id}`)} className="text-white flex gap-2 border border-gray-500 px-20 md:px-8 py-2 md:py-3 rounded-md md:rounded-sm md:hover:translate-y-[-2px] transition-all">View <ArrowUpRight color="#eab308"/></button>
+                  <button onClick={()=> navigate(`/blogPost/${blog.id}`)} className="text-white flex gap-2 border border-gray-500 px-[138px] md:px-8 py-2 md:py-3 rounded-md md:rounded-sm md:hover:translate-y-[-2px] transition-all">View <ArrowUpRight color="#eab308"/></button>
                 </div>
               </div>
             ))}
