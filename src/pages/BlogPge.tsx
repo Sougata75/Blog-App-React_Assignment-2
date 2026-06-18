@@ -87,9 +87,9 @@ const navigate = useNavigate();
                 <div className="w-full md:w-[25%]">
                   <div className="w-[100%] h-[150px] bg-cover bg-center rounded-md" style={{backgroundImage: `url(${blog.featured_image})`}}></div>
                 </div>
-                <div className="pt-3 md:pt-0 md:w-[57%] px-2">
+                <div className="pt-3 md:pt-0 w-full md:w-[57%] px-2">
                   <h3 className="text-gray-500 font-semibold text-xl">{blog.title}</h3>
-                  <h4 className="text-gray-600 my-2 font-semibold text-[16px] w-[75%] flex justify-between">Author: {blog.user.first_name} {blog.user.middle_name} {blog.user.last_name}
+                  <h4 className="text-gray-600 my-2 font-semibold text-[16px] w-[95%] md:w-[75%] flex justify-between">Author: {blog.user.first_name} {blog.user.middle_name} {blog.user.last_name}
                     <p>Category: {blog.category}</p>
                   </h4>
                   <p className="text-gray-600 my-2 font-semibold text-sm">{blog.summary}</p>
