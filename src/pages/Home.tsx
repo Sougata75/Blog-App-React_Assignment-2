@@ -48,7 +48,7 @@ function Home() {
         }
         return item + 1
       })
-    },30000);
+    },10000);
 
     return () => clearInterval(autoSlider)
   },[]);
